@@ -1,13 +1,20 @@
 {
 	"name": "r3bl-wp-reset",
+	"title": "R3BL WP Reset",
+	"last_version": "1.0.1",
 	"version": "1.0.1",
-	"description": "",
+	"created": "2024-02-26 13:18:00",
+	"description": "This plugin handles resetting WordPress. It disables things like the media library image sizes, JQuery, and other items that are basically useless for R3BL Creative development.",
+	"wordpress": {
+		"sections": {},
+		"banners": {}
+	},
 	"devDependencies": {
 		"grunt": "^1.6.1",
-		"grunt-contrib-compress": "^2.0.0"
+		"grunt-contrib-compress": "^2.0.0",
+		"grunt-string-replace": "^1.3.3"
 	},
 	"scripts": {
 		"dist": "grunt default"
-	},
-	"dependencies": {}
+	}
 }

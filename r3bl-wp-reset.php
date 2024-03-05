@@ -16,7 +16,7 @@
  * Plugin Name:       R3BL WP Reset
  * Plugin URI:        https://r3blcreative.com
  * Description:       This plugin handles "resetting" WordPress. It disables things like the media library image sizes, JQuery, and other items that are basically useless for R3BL Creative development.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            R3BL Creative - James Cook
  * Author URI:        https://r3blcreative.com/
  * License:           GPL-2.0+
@@ -32,10 +32,8 @@ if (!defined('WPINC')) {
 
 /**
  * Currently plugin version.
- * Start at version 1.0.0 and use SemVer - https://semver.org
- * Rename this for your plugin and update it as you release new versions.
  */
-define('R3BL_WP_RESET_VERSION', '1.0.0');
+define('R3BL_WP_RESET_VERSION', '1.0.1');
 
 require_once 'includes/class-plugin-updater.php';
 

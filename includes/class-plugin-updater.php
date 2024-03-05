@@ -157,7 +157,7 @@ class WP_Reset_Plugin_Updater {
 		if ($remote && version_compare($this->version, $remote->version, '<') && version_compare($remote->requires, get_bloginfo('version'), '<=') && version_compare($remote->requires_php, PHP_VERSION, '<')) {
 			$response = new \stdClass();
 			$response->slug					= $this->plugin_name;
-			$response->plugin				= plugin_basename(__FILE__);
+			$response->plugin				= $this->plugin_name . '/' . $this->plugin_name . '.php';
 			$response->new_version	= $remote->version;
 			$response->tested				= $remote->tested;
 			$response->package			= $remote->download_url;
