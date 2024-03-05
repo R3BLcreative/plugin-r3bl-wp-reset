@@ -1,0 +1,13 @@
+{
+	"name": "r3bl-wp-reset",
+	"version": "1.0.1",
+	"description": "",
+	"devDependencies": {
+		"grunt": "^1.6.1",
+		"grunt-contrib-compress": "^2.0.0"
+	},
+	"scripts": {
+		"dist": "grunt default"
+	},
+	"dependencies": {}
+}

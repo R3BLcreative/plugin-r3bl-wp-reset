@@ -37,6 +37,8 @@ if (!defined('WPINC')) {
  */
 define('R3BL_WP_RESET_VERSION', '1.0.0');
 
+require_once 'includes/class-plugin-updater.php';
+
 if (!class_exists('R3BL_WP_RESET')) {
 	class R3BL_WP_RESET {
 		public function __construct() {
@@ -61,7 +63,7 @@ if (!class_exists('R3BL_WP_RESET')) {
 			// add_action('wp_dashboard_setup', [$this, 'remove_dashboard_widgets']);
 			add_action('admin_menu', [$this, 'remove_admin_menus']);
 			add_action('init', [$this, 'remove_comment_support'], 100);
-			add_action('wp_before_admin_bar_render', [$this, 'remove_admin_bar_items']);
+			add_action('wp_before_admin_bar_render', [$this, 'remove_admin_bar_items'], 999);
 
 			//
 			remove_action('wp_head', 'print_emoji_detection_script', 7);
@@ -187,7 +189,18 @@ if (!class_exists('R3BL_WP_RESET')) {
 
 		public function remove_admin_bar_items() {
 			global $wp_admin_bar;
-			$wp_admin_bar->remove_menu('comments');
+
+			// WP Core Nodes
+			$wp_admin_bar->remove_node('updates');
+			$wp_admin_bar->remove_node('comments');
+			$wp_admin_bar->remove_node('wp-logo');
+			$wp_admin_bar->remove_node('customize');
+			//$wp_admin_bar->remove_node('site-name');
+			//$wp_admin_bar->remove_node('my-account');
+			//$wp_admin_bar->remove_node('search');
+
+			// Plugins
+			$wp_admin_bar->remove_node('gform-forms');
 		}
 
 
